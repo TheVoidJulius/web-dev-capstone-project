@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MAXIMUS DINING | Food Delivery App</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="#" aria-label="Maximus home">Maximus Dinings</a>
+
+      <nav class="main-nav" role="navigation" aria-label="Primary">
+        <ul>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#restaurants">Restaurants</a></li>
+          <li><a href="#offers">Offers</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn-outline" aria-label="Open cart">Cart (0)</button>
+        <a class="btn-primary" href="#signup">Sign up</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <h1 id="hero-title">Hot meals. Fast delivery.</h1>
+          <p>Order from nearby restaurants, track delivery in real time, and enjoy delicious food at home.</p>
+          <form class="search-form" role="search" aria-label="Search menu">
+            <label for="search-input" class="visually-hidden">Search dishes or restaurants</label>
+            <input id="search-input" type="search" placeholder="Search dishes, cuisines or restaurants" />
+            <button class="btn-primary" type="submit">Search</button>
+          </form>
+        </div>
+        <div class="hero-img-wrap" aria-hidden="true">
+          <img src="images\photo-1504754524776-8f4f37790ca0.avif" alt="Assortment of food on table" class="hero-img" />
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN LAYOUT: SIDEBAR + CONTENT -->
+    <section class="catalog container">
+      <!-- Sidebar / Filters (visual only) -->
+      <aside class="filters" aria-label="Menu filters">
+        <h2 class="small">Filters</h2>
+        <div class="filter-group">
+          <h3>Categories</h3>
+          <ul>
+            <li><button class="chip" aria-pressed="false">Pizza</button></li>
+            <li><button class="chip">Burgers</button></li>
+            <li><button class="chip">Sushi</button></li>
+            <li><button class="chip">Desserts</button></li>
+            <li><button class="chip">Beverages</button></li>
+          </ul>
+        </div>
+
+        <div class="filter-group">
+          <h3>Diet</h3>
+          <ul>
+            <li><label><input type="checkbox" /> Veg</label></li>
+            <li><label><input type="checkbox" /> Non-Veg</label></li>
+            <li><label><input type="checkbox" /> Gluten-free</label></li>
+          </ul>
+        </div>
+
+        <div class="filter-group">
+          <h3>Sort</h3>
+          <select aria-label="Sort menu">
+            <option>Popularity</option>
+            <option>Delivery time</option>
+            <option>Price: low to high</option>
+          </select>
+        </div>
+      </aside>
+
+      <!-- Menu and restaurants -->
+      <div class="content">
+        <!-- Featured / categories -->
+        <section class="categories" aria-labelledby="cat-title">
+          <h2 id="cat-title">Popular Near You</h2>
+          <div class="cat-grid">
+            <article class="cat-card">
+              <img src="images\premium_photo-1661762555601-47d088a26b50.avif" alt="Pizza">
+              <h3>Pizza</h3>
+            </article>
+            <article class="cat-card">
+              <img src="images\photo-1572802419224-296b0aeee0d9.avif" alt="Burgers">
+              <h3>Burgers</h3>
+            </article>
+            <article class="cat-card">
+              <img src="images\premium_photo-1668146927669-f2edf6e86f6f.avif" alt="Sushi">
+              <h3>Sushi</h3>
+            </article>
+            <article class="cat-card">
+              <img src="images\photo-1587314168485-3236d6710814.avif" alt="Dessert">
+              <h3>Desserts</h3>
+            </article>
+          </div>
+        </section>
+
+        <!-- Menu Grid -->
+        <section id="menu" class="section menu" aria-labelledby="menu-title">
+          <div class="section-head">
+            <h2 id="menu-title">Menu</h2>
+            <p class="muted">Tap an item to see details or add to cart</p>
+          </div>
+
+          <div class="menu-grid">
+            <!-- Menu Item -->
+            <article class="menu-item" tabindex="0" aria-label="Margherita pizza, 299 rupees">
+              <img src="images\photo-1574071318508-1cdbab80d002.avif" alt="Margherita pizza">
+              <div class="item-body">
+                <h3>Margherita Pizza</h3>
+                <p class="muted">Classic cheese & tomato</p>
+                <div class="item-meta">
+                  <span>₹299</span>
+                  <button class="btn-outline">Add</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-item" tabindex="0" aria-label="Veg Burger, 179 rupees">
+              <img src="images\photo-1603064752734-4c48eff53d05.avif" alt="Veg burger">
+              <div class="item-body">
+                <h3>Veg Burger</h3>
+                <p class="muted">Spicy patty with lettuce</p>
+                <div class="item-meta">
+                  <span>₹179</span>
+                  <button class="btn-outline">Add</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-item" tabindex="0" aria-label="Sushi Platter, 499 rupees">
+              <img src="images\photo-1642716968377-3437fae9bcb4.avif" alt="Sushi platter">
+              <div class="item-body">
+                <h3>Sushi Platter</h3>
+                <p class="muted">8-piece assorted sushi</p>
+                <div class="item-meta">
+                  <span>₹499</span>
+                  <button class="btn-outline">Add</button>
+                </div>
+              </div>
+            </article>
+
+            <article class="menu-item" tabindex="0" aria-label="Chocolate Brownie, 99 rupees">
+              <img src="images\photo-1624353365286-3f8d62daad51.avif" alt="Chocolate brownie">
+              <div class="item-body">
+                <h3>Chocolate Brownie</h3>
+                <p class="muted">Warm gooey brownie</p>
+                <div class="item-meta">
+                  <span>₹99</span>
+                  <button class="btn-outline">Add</button>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Restaurants -->
+        <section id="restaurants" class="section restaurants" aria-labelledby="rest-title">
+          <h2 id="rest-title">Nearby Restaurants</h2>
+          <div class="rest-grid">
+            <article class="rest-card">
+              <img src="images\premium_photo-1760559937323-b39e642083f5.avif" alt="Food hub restaurant">
+              <div>
+                <h3>Food Hub</h3>
+                <p class="muted">Fast Food · 25–35 min · ₹40 delivery</p>
+              </div>
+            </article>
+
+            <article class="rest-card">
+              <img src="images\photo-1757077760799-f3c36fc703ba.avif" alt="Urban bites">
+              <div>
+                <h3>Urban Bites</h3>
+                <p class="muted">Italian · 20–30 min · ₹30 delivery</p>
+              </div>
+            </article>
+
+            <article class="rest-card">
+              <img src="images\photo-1480796927426-f609979314bd.avif" alt="Sushi corner">
+              <div>
+                <h3>Sushi Corner</h3>
+                <p class="muted">Japanese · 30–40 min · ₹50 delivery</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <!-- Offers -->
+        <section id="offers" class="section offers" aria-labelledby="offers-title">
+          <h2 id="offers-title">Offers & Discounts</h2>
+          <div class="offer-row">
+            <div class="offer">
+              <h3>Flat ₹100 off</h3>
+              <p>On orders above ₹499 using code <strong>YUMMY100</strong></p>
+            </div>
+            <div class="offer">
+              <h3>Free Delivery</h3>
+              <p>On first 3 orders this month</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Contact / signup -->
+        <section id="contact" class="section contact" aria-labelledby="contact-title">
+          <h2 id="contact-title">Contact / Feedback</h2>
+          <form class="contact-form" aria-label="Contact form">
+            <label for="name">Name</label>
+            <input id="name" type="text" required placeholder="Your name" />
+
+            <label for="email">Email</label>
+            <input id="email" type="email" required placeholder="you@example.com" />
+
+            <label for="msg">Message</label>
+            <textarea id="msg" required placeholder="Tell us about your experience"></textarea>
+
+            <button class="btn-primary" type="submit">Send</button>
+          </form>
+        </section>
+      </div>
+
+      <!-- Cart summary (visual) -->
+      <aside class="cart" aria-label="Cart summary">
+        <h2 class="small">Your Cart</h2>
+        <div class="cart-items">
+          <p class="muted">No items yet. Tap Add to build your order.</p>
+        </div>
+        <div class="cart-footer">
+          <p>Total: <strong>₹0</strong></p>
+          <button class="btn-primary">Checkout</button>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© 2025 Maximus Dining | Order fresh & fast</p>
+      <nav aria-label="Footer social">
+        <ul class="socials">
+          <li><a href="#" aria-label="Facebook"><img
+                src="images\0b226c450798410ac541646c86ec31afd840e5beab817a5d84fa821e7db61981ec84c3b4a3f072a7a2e1899c9fb06c6edb7f687904e002fe9d173c29703fc5f5c904b967f40bc6b3c47fa046b55622e7fffc2ede91db8925b474441f9570e4c9.png"
+                width="50px" height="50px" alt=""></a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+</body>
+
+</html>

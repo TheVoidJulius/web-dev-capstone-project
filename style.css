@@ -1,0 +1,509 @@
+/* style.css — QuickBites Food Delivery App */
+
+/* Reset & base */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color: #846800;
+  background: #ffe0e0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  --primary: #ff6b35;
+  --accent: #2b2d42;
+  --muted: #6b7280;
+  --card: #ffac80;
+  --radius: 12px;
+  --gap: 1.25rem;
+}
+
+/* Utility */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.small {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* Accessibility helper */
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Header */
+.site-header {
+  background: #a34100;
+  border-bottom: 1px solid #bc3200;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap);
+  padding: 0.8rem 0;
+}
+
+.brand {
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 1.25rem;
+  text-decoration: none;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #333;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+}
+
+.main-nav a:hover {
+  background: #ff3815;
+  color: var(--primary);
+}
+
+/* Buttons */
+.btn-primary {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(255, 107, 53, 0.16);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #fdffd2;
+  padding: 0.45rem 0.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-outline:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* HERO */
+.hero {
+  background: linear-gradient(180deg, #fff 60%, #fff);
+  padding: 2.5rem 0 1.5rem;
+}
+
+.hero-inner {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero-copy {
+  max-width: 55%;
+}
+
+.hero-copy h1 {
+  font-size: 2.1rem;
+  margin: 0 0 0.5rem;
+  color: var(--accent);
+}
+
+.hero-copy p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
+
+.search-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.search-form input[type="search"] {
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #271e1e;
+  width: 100%;
+}
+
+.hero-img {
+  width: 320px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Catalog layout */
+.catalog {
+  display: grid;
+  grid-template-columns: 260px 1fr 300px;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.5rem 0 4rem;
+}
+
+/* Filters (aside) */
+.filters {
+  background: var(--card);
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: 0 8px 22px rgba(15, 15, 15, 0.03);
+  position: sticky;
+  top: 76px;
+  height: fit-content;
+}
+
+.filter-group h3 {
+  margin: 0.5rem 0 0.5rem;
+  font-size: 0.95rem;
+}
+
+.chip {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 0.4rem 0.6rem;
+  border-radius: 999px;
+  cursor: pointer;
+  margin-bottom: 0.4rem;
+}
+
+.chip:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* Content */
+
+/* Category cards */
+.cat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.cat-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff;
+  padding: 0.6rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(10, 10, 10, 0.03);
+}
+
+.cat-card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Menu grid */
+.section {
+  margin-top: 1.25rem;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.menu-item {
+  display: flex;
+  gap: 0.8rem;
+  background: #fff;
+  padding: 0.6rem;
+  border-radius: 14px;
+  align-items: center;
+  box-shadow: 0 8px 20px rgba(12, 12, 12, 0.04);
+  transition: transform 220ms ease;
+  cursor: pointer;
+}
+
+.menu-item:hover {
+  transform: translateY(-6px);
+}
+
+.menu-item img {
+  width: 110px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.item-body h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.item-body .muted {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+}
+
+.item-meta {
+  margin-top: 0.6rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Restaurants */
+.rest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.rest-card {
+  display: flex;
+  gap: 0.8rem;
+  background: #fff;
+  padding: 0.6rem;
+  border-radius: 12px;
+  align-items: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.04);
+}
+
+.rest-card img {
+  width: 96px;
+  height: 74px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Offers */
+.offer-row {
+  display: flex;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.offer {
+  flex: 1;
+  background: linear-gradient(90deg, #fff5ee, #fff);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+}
+
+/* Contact */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  max-width: 560px;
+  margin-top: 0.5rem;
+}
+
+.contact-form input,
+.contact-form textarea,
+select {
+  border-radius: 10px;
+  border: 1px solid #e9e9e9;
+  padding: 0.6rem;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Cart aside */
+.cart {
+  background: #fff01c;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
+  position: sticky;
+  top: 76px;
+  height: fit-content;
+}
+
+.cart-items {
+  min-height: 90px;
+  padding: 0.25rem 0;
+}
+
+.cart-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.8rem;
+}
+
+/* Footer */
+.site-footer {
+  background: #0b1020;
+  color: #fff;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Transitions */
+img {
+  transition: transform 220ms ease;
+}
+
+.menu-item img:hover,
+.rest-card img:hover {
+  transform: scale(1.03);
+}
+
+/* Keyframe animation — subtle hero float */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.hero-img {
+  animation: float 5s ease-in-out infinite;
+}
+
+/* Responsive breakpoints */
+/* Desktop (>=1024 already covered by default layout) */
+@media (max-width: 1024px) {
+  .cat-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .rest-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .catalog {
+    grid-template-columns: 220px 1fr 260px;
+  }
+
+  .hero-copy {
+    max-width: 60%;
+  }
+}
+
+/* Tablet (~768px) */
+@media (max-width: 768px) {
+  .hero-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .catalog {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .filters,
+  .cart {
+    display: none;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rest-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-img {
+    width: 90%;
+  }
+
+  .main-nav {
+    display: none;
+  }
+}
+
+/* Mobile (<=480px) */
+@media (max-width: 480px) {
+  html {
+    font-size: 15px;
+  }
+
+  .hero-copy h1 {
+    font-size: 1.6rem;
+  }
+
+  .brand {
+    font-size: 1.05rem;
+  }
+
+  .btn-primary {
+    padding: 0.5rem 0.8rem;
+  }
+
+  .cat-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
